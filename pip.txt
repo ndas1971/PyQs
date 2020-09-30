@@ -1,0 +1,24 @@
+pip install requests BeautifulSoup4 python-docx python-pptx openpyxl reportlab
+
+-----------------------------------------------
+Note: Location 
+https://pip.pypa.io/en/stable/user_guide/#config-file
+Many options are there 
+eg 
+proxy = http://username:password@ipaddress:port
+index-url = https://<login>:<password>@your.repo.com/custom/url
+
+Windows devices: Create %APPDATA%\pip\pip.ini
+with the following contents:
+
+[global]
+index-url = https://<<SERVER>>/artifactory/api/pypi/<<LOCATION>>/simple/
+----------------------------------------------------
+How to find pip 
+
+1. Find out directory where python.exe is installed 
+   (Suppose it is C:\FAST\Python\3.64)
+2. Then pip.exe is installed at 'Scripts' directory 
+   (ie C:\FAST\Python\3.64\Scripts)
+3. Execute pip as 
+   C:\FAST\Python\3.64\Scripts\pip 
