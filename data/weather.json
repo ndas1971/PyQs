@@ -1,0 +1,149 @@
+{
+ "query": {
+  "count": 1,
+  "created": "2020-08-19T07:34:44Z",
+  "lang": "en-IN",
+  "results": {
+   "channel": {
+    "units": {
+     "distance": "mi",
+     "pressure": "in",
+     "speed": "mph",
+     "temperature": "F"
+    },
+    "title": "Yahoo! Weather - mumbai, Unknown",
+    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+    "description": "Yahoo! Weather for mumbai, Unknown",
+    "language": "en-us",
+    "lastBuildDate": "Wed, 19 Aug 2020 07:34 AM",
+    "ttl": "60",
+    "location": {
+     "city": "mumbai",
+     "country": "Unknown",
+     "region": " Unknown"
+    },
+    "wind": {
+     "chill": "3",
+     "direction": "23",
+     "speed": "22"
+    },
+    "atmosphere": {
+     "humidity": "71",
+     "pressure": "1007.0",
+     "rising": "0",
+     "visibility": "16.1"
+    },
+    "astronomy": {
+     "sunrise": "7:6 am",
+     "sunset": "10:56 pm"
+    },
+    "image": {
+     "title": "Yahoo! Weather",
+     "width": "142",
+     "height": "18",
+     "link": "http://weather.yahoo.com",
+     "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+    },
+    "item": {
+     "title": "Conditions for mumbai, Unknown at 06:00 AM",
+     "lat": "64.499474",
+     "long": "-165.405792",
+     "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+     "pubDate": "Wed, 19 Aug 2020 07:34 AM",
+     "condition": {
+      "code": "31",
+      "date": "Wed, 19 Aug 2020 07:34 AM",
+      "temp": "17",
+      "text": "Clear"
+     },
+     "forecast": [
+      {
+       "code": "23",
+       "date": "19 Aug 2020",
+       "day": "Wed",
+       "high": "27",
+       "low": "17",
+       "text": "Breezy"
+      },
+      {
+       "code": "34",
+       "date": "20 Aug 2020",
+       "day": "Thu",
+       "high": "38",
+       "low": "22",
+       "text": "Mostly Sunny"
+      },
+      {
+       "code": "28",
+       "date": "21 Aug 2020",
+       "day": "Fri",
+       "high": "36",
+       "low": "29",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "22 Aug 2020",
+       "day": "Sat",
+       "high": "35",
+       "low": "26",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "23 Aug 2020",
+       "day": "Sun",
+       "high": "34",
+       "low": "31",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "30",
+       "date": "24 Aug 2020",
+       "day": "Mon",
+       "high": "34",
+       "low": "29",
+       "text": "Partly Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "25 Aug 2020",
+       "day": "Tue",
+       "high": "33",
+       "low": "30",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "26 Aug 2020",
+       "day": "Wed",
+       "high": "34",
+       "low": "31",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "26",
+       "date": "27 Aug 2020",
+       "day": "Thu",
+       "high": "37",
+       "low": "29",
+       "text": "Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "28 Aug 2020",
+       "day": "Fri",
+       "high": "33",
+       "low": "28",
+       "text": "Mostly Cloudy"
+      }
+     ],
+     "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/31.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Clear\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Wed - Breezy. High: 27Low: 17\n<BR /> Thu - Mostly Sunny. High: 38Low: 22\n<BR /> Fri - Mostly Cloudy. High: 33Low: 28\n<BR /> Sat - Mostly Cloudy. High: 36Low: 29\n<BR /> Sun - Mostly Cloudy. High: 35Low: 26\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n<BR />\n]]>",
+     "guid": {
+      "isPermaLink": "false"
+     }
+    }
+   }
+  }
+ }
+}
