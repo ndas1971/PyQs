@@ -1,0 +1,549 @@
+---------------Ground Rules -----------------
+Trainer
+    Less theory, more handson 
+        from 3pm everyday
+            few exercises independently 
+            Core python every day handson 
+            Upload the final working code  in github 
+    10Q10min assessment everyday 
+    
+Participants 
+    Support assisted learning
+    Replicate trainers code in own machine    
+    Solve independently all exercises and upload in github     
+    Ask questions, pause if going fast 
+        Follow pull method of learning 
+        Ask min 10 questions in a day 
+    Give feedback if pace is high or low or more examples needed
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+---- TOC ---- ----------------------------------------
+Python basic refresher 
+sorting/lambda, OOP, decorator, iterator
+concurrent, asynchronous ,type, package manager 
+flask, fastapi 
+matplotlib/pandas, ML , NN 
+LLM 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------Levels-----------------
+L5 - L4 + develop using any complex 3rd party modules
+L4 - L3 + comfortable with Decorator, Iterator, lambda
+L3 - L2 + OPP including class methods and pytest
+L2 - L1 + functions and sorting 
+L1 - nested DS, modules and using std lib 
+L0 - No python knowledge, but have other programming knowledge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+----- Detailed ------
+DAY-1
+    Refresher Course based on Q&A:
+    Basic datatypes 
+    Control structures
+    Python Data Structures
+    Nested Data Structure
+    Functions
+    Only HandsOn:
+      Working with files
+      Using Modules
+      Using the Standard Library
+DAY-2
+    Sorting and lambda 
+    Introduction to OOP
+    Exception Handling
+    Unit testing 
+    Introduction to decorator and Iterator
+
+    Introduction to concurrent Programming
+    HTTP automation
+       json/xml
+DAY3
+    Python package manager
+    Python Type system    
+
+    Pattern matching syntax
+    Asynchronous programming
+
+DAY4:
+    Understanding Webserver
+    Introduction to Flask
+    Jinja2 template
+
+    Form Handling
+    Flask configuration
+
+DAY5:
+    Working with databases (SQLAlchemy, SQLite/PostgreSQL)
+    Building a REST API with Flask
+
+    Authentication & middleware
+    Packaging and deployment
+    Understanding security
+    Assessment
+
+DAY6:
+    Introduction to FastAPI & differences from Flask
+    Dependency injection & middleware
+    Develop a RESTful API using FastAPI
+
+    Implement user authentication and CRUD operations
+    Use a database (SQLite/PostgreSQL)
+    Deploy the API using Docker
+
+DAY7:
+    Introduction to Data analysis methods
+    Numpy, pandas, matplotlib
+    Introduction to advanced visialization using sns
+
+    Machine Learning introduction
+    ML general steps
+
+DAY8:
+    Regression, Metrics , CV, Pipeline
+
+    Feature Selection, Transformation and Extraction 
+
+DAy9:
+    Classifications and Metrics
+
+    Introduction to Ensemble methods
+    Introduction to NN and DNN using keras 
+    TF and/or Torch as backend
+
+DAy10:
+    Introduction to NLP
+    Various Techniques of NLP
+    Introduction to GenAI
+    LLM concepts
+       RAG
+       grounding
+       few shots
+       prompt
+
+       LangChain introduction & LLM integration
+    Building AI-powered applications with OpenAI API
+    Assessment
+
+###Git commands 
+Create a repo in github web interface 
+
+#init a local repo 
+cd  dir 
+git init 
+git config --global user.email "mail_id"
+git config --global user.name  "mail_id_before@"
+
+git add one file name 
+git commit -m "Added trunc"
+#only for once
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO
+#every time, master is branch name 
+git push -u origin master
+Give username 
+When Git prompts you for your password, enter your personal access token.
+(profile image of your GitHub account -> Settings -> Developer Settings
+-> Personal access tokens)
+
+#For Fetching  
+git fetch origin master # whatever origin referes to , and master is branch 
+
+
+
+#for removing and then creating a branch 
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+git push origin master   
+
+#add directory 
+mkdir dir_name 
+#to add recursively 
+git add -f -all 
+git commit -am "<commit message>"
+git push -u origin master
+
+
+#clone a repo 
+cd  dir 
+git clone <repo url>
+
+#Advanced 
+Check current status /branch 
+    $ git status 
+    $ git branch 
+creates a new branch and switches to it
+    git checkout -b dev 
+Check status and diff 
+    git status 
+    git diff 
+Do changes 
+    git add README.md 
+    git commit -m "Added my nmae to REAME"
+all the commits on my current local branch.
+    git log 
+Push the new branch 
+    do git push --set-upstream origin dev
+Merging to main branch 
+    What rebase does is take all the commits that were made to the TO_BRANCH branch 
+    and it puts them right before all commits at FROM_BRANCH and make FROM_BRANCH
+    uptodate with TO_BRANCH, hence easy to merge FROM_BRANCH to TO_BRANCH
+    (generally, TO_BRANCH is main branch, FROM_BRANCH is working branch)
+    change to the branch to where we do merging 
+        git checkout TO_BRANCH 
+        git pull
+    change to the branch from where we do merging 
+        git checkout FROM_BRANCH  #FROM branch 
+        git rebase TO_BRANCH   #TO branch 
+            above flags conflicts 
+            ... 3-way merge 
+            error: failed to merge 
+            open the file and update 
+            Git merge conflicts are denoted with their <<<<<<< HEAD, 
+            which denotes the beginning of a conflict 
+            in a file. Then that part to ======= represents the new changes that are causing 
+            the conflict. 
+            Then that part to the end of >>>>>>> [commit message] is the most current commit 
+            ,which is basically what you had in your code before your changes
+            that caused a conflict.Change manually 
+            Then again restart 
+            git rebase --continue 
+    actual merging 
+        $ git checkout TO_BRANCH 
+        $ git pull 
+        $ git merge FROM_BRANCH
+        $ git push      
+
+Sometimes you might be working on something at OWN_BRANCH, 
+there are some new changes someone else pushed to FROM_BRANCH that you want. 
+YOU are at  OWN_BRANCH 
+$ git stash
+$ git checkout FROM_BRANCH
+$ git pull
+$ git checkout OWN_BRANCH
+$ git rebase FROM_BRANCH
+$ git stash pop
+$ git stash list 
+
+
+###Docker 
+docker pull ubuntu
+docker run --name ubuntu_bash --rm -i -t ubuntu bash
+docker exec -d ubuntu_bash touch /tmp/execWorks
+docker logs -f ubuntu_bash
+docker container ps -all 
+docker kill ubuntu_bash
+docker rm -f ubuntu_bash
+docker rmi ubuntu
+docker cp ./some_file CONTAINER:/work
+docker cp CONTAINER:/var/logs/ /tmp/app_logs
+
+
+> docker --version
+#Pull the hello-world image from Docker Hub and run a container:
+> docker run hello-world
+#List the hello-world image that was downloaded from Docker Hub:
+> docker image ls
+#List the hello-world container 
+> docker container ls --all
+#Explore the Docker help pages by running some help commands:
+> docker --help
+> docker container --help
+> docker container ls --help
+> docker run --help
+
+#inside the spawned container:
+
+> docker run --interactive --tty ubuntu bash  #pulls ubuntu:latest
+#or 
+> docker run -it  ubuntu bash
+root@8aea0acb7423:$ hostname
+8aea0acb7423
+#Notice that the hostname is assigned as the container ID 
+#(and is also used in the prompt).
+#Exit the shell with the exit command (which also stops the container):
+root@8aea0acb7423:/$ exit
+
+#eg The password is 'ubuntu' for the 'ubuntu' user (at least in docker for ubuntu :14.04.03).
+#NB: 'ubuntu' is created after the startup of the container so, below would directly take to root 
+$ docker run -i -t --entrypoint /bin/bash  ubuntu  
+
+> docker container ls --all
+CONTAINER ID    IMAGE          COMMAND     CREATED          STATUS                      PORTS    NAMES
+8aea0acb7423    ubuntu         "bash"      2 minutes ago    Exited (0) 2 minutes ago             laughing_kowalevski
+45f77eb48e78    hello-world    "/hello"    3 minutes ago    Exited (0) 3 minutes ago             relaxed_sammet
+
+
+#Pull and run a Dockerized nginx web server that we name, webserver:
+#expose port 80 on the container(nginx) to port 8080(public) on the host
+#--rm is must as it would delete old container or change the name 
+#(upping takes min 3 min)
+> docker run --rm --detach --publish 8080:80 --name webserver nginx #host:guest
+#or 
+> docker run --rm -d -p 8080:80 --name webserver nginx
+
+Point your web browser at http://192.168.99.101:8080 to display the nginx start page. 
+(localhost does not work)
+192.168.99.101 is the docker VM displayed during cmd start up 
+or docker-machine ip or $DOCKER_HOST for docker tools 
+For deocker desktop, localhost works 
+
+#Stop the running nginx container by the name we assigned it, webserver:
+>  docker container stop webserver 
+
+#Remove all three containers by their names -- the latter two names will differ for you:
+#below is must to rerun with same name 
+> docker container rm webserver laughing_kowalevski relaxed_sammet docker-nginx
+
+##Quick App services 
+Reference 
+https://github.com/docker/awesome-compose
+Step 1: Define the application dependencies
+
+mkdir composetest
+cd composetest
+
+#app.py
+import time
+
+import redis
+from flask import Flask
+
+app = Flask(__name__)
+cache = redis.Redis(host='redis', port=6379)
+
+def get_hit_count():
+    retries = 5
+    while True:
+        try:
+            return cache.incr('hits')
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+@app.route('/')
+def hello():
+    count = get_hit_count()
+    return 'Hello World! I have been seen {} times.\n'.format(count)
+
+#requirements.txt
+flask
+redis
+
+Step 2: Create a Dockerfile
+
+#Dockerfile 
+# syntax=docker/dockerfile:1
+FROM python:3.10-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD ["flask", "run"]
+
+Step 3: Define services in a Compose file
+
+#compose.yaml
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
+
+host port 8000 to container port 5000
+
+Step 4: Build and run your app with Compose
+
+$ docker compose up
+
+Creating network "composetest_default" with the default driver
+Creating composetest_web_1 ...
+Creating composetest_redis_1 ...
+Creating composetest_web_1
+Creating composetest_redis_1 ... done
+Attaching to composetest_web_1, composetest_redis_1
+web_1    |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+Enter http://localhost:8000/ in a browser to see the application running.
+
+Hello World! I have been seen 1 times.
+
+Refresh the page.The number should increment.
+
+$ docker image ls
+
+    REPOSITORY        TAG           IMAGE ID      CREATED        SIZE
+    composetest_web   latest        e2c21aa48cc1  4 minutes ago  93.8MB
+    python            3.4-alpine    84e6077c7ab6  7 days ago     82.5MB
+    redis             alpine        9d8fa9aa0e5b  3 weeks ago    27.5MB
+
+Step 5: Edit the Compose file to add a bind mount
+
+#compose.yaml 
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/code
+    environment:
+      FLASK_DEBUG: "true"
+  redis:
+    image: "redis:alpine"
+    
+host dir .  to container dir /code 
+
+Step 6: Re-build and run the app with Compose
+$ docker compose up
+
+Creating network "composetest_default" with the default driver
+Creating composetest_web_1 ...
+Creating composetest_redis_1 ...
+Creating composetest_web_1
+Creating composetest_redis_1 ... done
+Attaching to composetest_web_1, composetest_redis_1
+web_1    |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+...
+
+Step 7: Update the application
+
+#app.py and save it. 
+#For example, change the Hello World! message to Hello from Docker!:
+
+return 'Hello from Docker! I have been seen {} times.\n'.format(count)
+
+Refresh the app in your browser. 
+The greeting should be updated, and the counter should still be incrementing.
+
+Step 8: Experiment with some other commands
+$ docker compose up -d    #detached 
+
+Starting composetest_redis_1...
+Starting composetest_web_1...
+
+$ docker compose ps
+
+       Name                      Command               State           Ports         
+-------------------------------------------------------------------------------------
+composetest_redis_1   docker-entrypoint.sh redis ...   Up      6379/tcp              
+composetest_web_1     flask run                        Up      0.0.0.0:8000->5000/tcp
+
+$ docker compose run web env
+
+$ docker compose stop
+
+Pass --volumes to also remove the data volume used by the Redis container:
+
+$ docker compose down --volumes
+
+###Poetry packagemanager 
+
+https://python-poetry.org/docs/
+
+Poetry replaces setup.py, requirements.txt, setup.cfg, MANIFEST.in and Pipfile 
+with a simple pyproject.toml based project format.
+(check https://python-poetry.org/docs/pyproject/)
+
+poetry creates  creates Virtual Env , So no need for below 
+$ python -m venv <venv>  # for example c:\path\to\myenv
+$ source <venv>/bin/activate
+
+C:\> <venv>\Scripts\activate.bat
+PS C:\> <venv>\Scripts\Activate.ps1
+
+#commands 
+poetry new flaskr
+cd flaskr
+
+#if local pypi server is needed, add index-url else skip 
+https://<<SERVER>>/artifactory/api/pypi/<<LOCATION>>/simple/
+pip config list  
+#pip config get global.index-url 
+#pip config --global get index-url
+poetry source add --priority=default internalpypi index-url 
+poetry source add --priority=supplemental PyPI
+
+#Then do 
+poetry config virtualenvs.in-project true 
+poetry cache clear pypi --all
+
+poetry add flask gevent
+#poetry add django@^4.0.0
+poetry install
+poetry env info
+#build 
+poetry build -v
+
+#WIth virtual env 
+$ poetry shell 
+> python flaskr\somefile.py
+
+#FURTHER TEST 
+python -m vnev .\env 
+.\env\Scripts\activate
+pip install dist/flaskr-1.0.0-py3-none-any.whl
+cd ..
+set FLASK_APP=flaskr 
+flask run 
