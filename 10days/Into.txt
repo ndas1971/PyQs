@@ -60,18 +60,14 @@ DAY5:
     Building a REST API with Flask
 
     Authentication & middleware
-    Packaging and deployment
-    Understanding security
-    Assessment
+    Packaging and deployment    
 
 DAY6:
-    Introduction to FastAPI & differences from Flask
-    Dependency injection & middleware
+    Introduction to FastAPI & differences from Flask    
     Develop a RESTful API using FastAPI
 
     Implement user authentication and CRUD operations
-    Use a database (SQLite/PostgreSQL)
-    Deploy the API using Docker
+    Dependency injection & middleware
 
 DAY7:
     Introduction to Data analysis methods
