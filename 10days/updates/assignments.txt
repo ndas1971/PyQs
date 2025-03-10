@@ -1,0 +1,72 @@
+######################DAY-1####################
+std lib 
+
+Question-1 
+input_str = "Hello world and Hello Earth" 
+print frequency of each words 
+
+
+
+Question-2: 
+Given:D1 = {'ok': 1, 'nok': 2}
+D2 = {'ok': 2, 'new':3 }
+Create below:
+# union of keys, #value does not matter
+D_UNION = { 'ok': 1, 'nok': 2 , 'new':3  } 
+# intersection of keys, #value does not matter
+D_INTERSECTION = {'ok': 1}
+D1- D2 = {'nok': 2 }
+#values are added for same keys
+D_MERGE = { 'ok': 3, 'nok': 2 , 'new':3  }
+
+
+Question-3:
+Given a directory, find out the file Name 
+having max size recursively 
+
+
+Question-4:
+Recurively go below a dir and based on filter, dump those files in to  single file 
+(work with only text file)
+
+
+######################DAY-2####################
+oop
+
+Question-5:
+
+from pkg.poly import Poly 
+a = Poly(1,2,3)  #an, ...., a0 
+b = Poly(1,0,1,1,2,3)
+c = a+b 
+print(c) #Poly ( 1,0,1, 2,4,6)
+
+Question-6:
+#MaxFile class 
+from pkg.file import File 
+fs = File(".")
+fs.getMaxSizeFile(2) # gives two max file names 
+fs.getLatestFiles(datetime.date(2018,2,1))
+#Returns list of files after 1st Feb 2018 
+
+
+
+
+######################DAY-3####################
+concurrent
+
+Question-8:
+Given a URL, download that and parse 
+and download all links inside that page 
+    in thread 
+    in process 
+    in asynchornous 
+    ThreadPoolExecutor or ProcessPoolExecutor or asyncio
+    BeautifulSoup for parsing html, requests for downloading
+    
+######################DAY-4####################
+Question-9:
+Given a filename and no of breaks, generate that many files with chunks from original file names 
+
+Question-10:
+Concatenate many .txt file into one file 
