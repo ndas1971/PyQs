@@ -34,12 +34,13 @@ DAY-2
     Introduction to OOP
     Exception Handling
     Unit testing 
-    Introduction to decorator and Iterator
-
-    Introduction to concurrent Programming
+    Introduction to decorator and Iterator    
     HTTP automation
        json/xml
+    *, ** concept - only for function
+    file processing- csv 
 DAY3
+    Introduction to concurrent Programming
     Python package manager
     Python Type system    
 
@@ -557,6 +558,26 @@ pip install dist/flaskr-1.0.0-py3-none-any.whl
 cd ..
 set FLASK_APP=flaskr 
 flask run 
+
+In Latest versions 
+instead of poetry shell use 
+poetry env activate 
+this displays the env file to execute, so execute it 
+
+src layouts - how to run pytest 
+Update 
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src", "src2",
+]
+
+or
+
+[pytest]
+pythonpath = src src2
+
+
 
 
 ###Install 
