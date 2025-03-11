@@ -70,3 +70,82 @@ Given a filename and no of breaks, generate that many files with chunks from ori
 
 Question-10:
 Concatenate many .txt file into one file 
+
+######################DAY-5####################
+Question-11:
+Weather mock API 
+format comes from below endpoint 
+    Parse format, if xml, show xml, 
+    if none, show json 
+    Put all random temp 
+    City name may change based on PATH param 
+    (currently not implemented in demo api endpoint)
+
+DO the same as 
+http://notepadfromdas.pythonanywhere.com/w/mumbai?format=xml
+http://notepadfromdas.pythonanywhere.com/w/mumbai
+
+######################DAY-6####################
+fastapi
+Question-18:
+convert REST flask to fastapi
+
+
+######################DAY-7####################
+pandas
+
+Question-20
+# A. Daily attendance of bike tracks
+every row contains the number of bicycles on every track of the city(montreal), 
+for every day of the year.
+Can you infer anything from the attendence record?
+
+url = "https://raw.githubusercontent.com/ndas1971/Misc/master/bikes.csv"
+
+1. Read 
+2. Check head 
+3. Check summary statistics 
+4. plot the daily attendance of two tracks, 'Berri1', 'PierDup'
+5. Check index , explore weekday_name attributes 
+6. Get sum of all attendance as a function of the weekday
+7. Display this in figure , what is the inference?
+
+
+# B. Titanic-https://www.kaggle.com/c/titanic/data
+Database of whether somebody survived or not
+Can you infer who has survived ?
+
+1. Load the data
+2. Which gender survived more 
+3. Does it depend on pclass?
+4. can we see % of survival of each gender and pclass 
+What is your inference? 
+
+# C. Roger Federer database 
+
+Each row corresponds to a ATP match played by Roger Federer
+
+Can you infer anything on Roger Federer performance?
+
+player = 'Roger Federer'
+url = "https://raw.githubusercontent.com/ndas1971/Misc/master/federer.csv"
+
+1. Read and check data 
+2. How many % of matched won by our player? ('winner')
+3. Proportion of double faults wrt total points in each match 
+This number is an indicator of the player's state of mind, his level of self-confidence, 
+his willingness to take risks while serving, and other parameters.
+columns:
+'player1 double faults' and 'player1 total points total'
+Display simple stats of above 
+4. Average Win per surface 
+5. Display the proportion of double faults as a function of the tournament date, 'start date'
+Trend: display average double faults in each year 
+
+######################DAY-Weekend####################
+flask
+Question-16:
+Sharing of content 
+@app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
+@app.route("/share", methods=['GET'])#http://localhost:5000/share
+@app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
