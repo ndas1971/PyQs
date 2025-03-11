@@ -1,15 +1,3 @@
-<style>
-a {
-    font-size: 150%;
-}
-a:link, a:visited {
-    color: blue;
-}
-a:hover {
-    color: red;
-}
-</style>
-
 <a href="https://docs.python.org/3/reference/datamodel.html">Special methods<a><br/>
 <a href="https://www.oreilly.com/library/view/design-patterns-elements/0201633612/">Design pattern<a><br/> 
 <a href="https://github.com/faif/python-patterns">Python Patterns<a><br/>
