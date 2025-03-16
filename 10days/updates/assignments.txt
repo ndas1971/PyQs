@@ -91,6 +91,15 @@ Question-18:
 convert REST flask to fastapi
 
 
+######################DAY-Weekend####################
+flask
+Question-16:
+Sharing of content 
+@app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
+@app.route("/share", methods=['GET'])#http://localhost:5000/share
+@app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
+
+
 ######################DAY-7####################
 pandas
 
@@ -142,10 +151,97 @@ Display simple stats of above
 5. Display the proportion of double faults as a function of the tournament date, 'start date'
 Trend: display average double faults in each year 
 
-######################DAY-Weekend####################
-flask
-Question-16:
-Sharing of content 
-@app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
-@app.route("/share", methods=['GET'])#http://localhost:5000/share
-@app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
+
+D. 
+Create two frequencies 5Hz and 50Hz sin signals 
+Draw FFT components 
+
+E. Plotting normal random numbers
+and show that addition of two Gaussian is Gaussian 
+and addition of all is Gaussian
+
+######################DAY-8####################
+regression
+Question-23
+Use 
+sklearn.datasets.load_breast_cancer
+And Yellowbrick
+Show confusion matrix and ROCAUC 
+using Logistic regression 
+
+
+#https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)
+#check wdbc.data or check  breast_cancer.csv , but use load_breast_cancer() 
+#Diagnosis (M = malignant,1, B = benign,0) 
+1) ID number
+2) Diagnosis (M = malignant, B = benign)
+3-32)Ten real-valued features are computed for each cell nucleus:
+a) radius (mean of distances from center to points on the perimeter)
+b) texture (standard deviation of gray-scale values)
+c) perimeter
+d) area
+e) smoothness (local variation in radius lengths)
+f) compactness (perimeter^2 / area - 1.0)
+g) concavity (severity of concave portions of the contour)
+h) concave points (number of concave portions of the contour)
+i) symmetry
+j) fractal dimension ("coastline approximation" - 1)
+
+B. Use data/breast_cancer.csv
+Use LabelEncoder and MinMaxScalar and Use pipeline 
+Then GridSearch on param_grid = dict(lr__C=[0.1, 1, 10])
+using Logistic regression 
+
+
+######################DAY-9####################
+tpot/keras
+
+Question-26
+# HandsOn - Predict The Data Scientists Salary In India from kaggle use sklearn
+dataset: Predict-The-Data-Scientists-Salary-In-India_Train_Dataset.csv
+Data Features:
+    Name of the company (Encoded)
+    Years of experience(split to min and max experience)
+    Job description
+    Job designation
+    Job Type
+    Key skills
+    Location (needs LabelEncoded)
+    Salary in Rupees Lakhs(To be predicted)(needs LabelEncoded)
+    
+Find the best estimator among below 
+clf1 = DecisionTreeClassifier()
+clf2 = RandomForestClassifier(n_estimators=100)
+clf3 = ExtraTreesClassifier(n_estimators=100)
+clf4 =  AdaBoostClassifier(n_estimators=100)
+clf5 =  GradientBoostingClassifier(n_estimators=100)
+
+Question-27
+# HandsOn - Titanic survival prediction , from Kaggle
+https://www.kaggle.com/c/titanic/data
+           
+Understand data, download only train.csv and test.csv 
+
+Using Tpot, find the test score of best Estimator 
+Hint:
+The first and most important step in using TPOT on any data set 
+is to rename the target class/response variable to 'class'.
+
+At present, TPOT requires all the data to be in numerical format. 
+Categorical:  Name, Sex, Ticket, Cabin and Embarked.
+So convert categorical to number(which preprocessing?) and/or 
+discard high levels of categorical completely 
+
+Keras:
+data/pima-indians-diabetes.csv, Binary classification 
+
+######################DAY-10####################
+langchain
+Question-30
+Create chatbot using flask and langchain
+    Display has two inputs 
+    Query - takes Query
+    Result - returns result 
+MUst Have history
+
+
