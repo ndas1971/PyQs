@@ -1,0 +1,272 @@
+######################DAY-1####################
+std lib 
+
+
+
+Question-2: 
+Given:D1 = {'ok': 1, 'nok': 2}
+D2 = {'ok': 2, 'new':3 }
+Create below:
+# union of keys, #value does not matter
+D_UNION = { 'ok': 1, 'nok': 2 , 'new':3  } 
+# intersection of keys, #value does not matter
+D_INTERSECTION = {'ok': 1}
+D1- D2 = {'nok': 2 }
+#values are added for same keys
+D_MERGE = { 'ok': 3, 'nok': 2 , 'new':3  }
+
+######################DAY-2####################
+Question-3:
+Given a directory, find out the file Name 
+having max size recursively 
+
+Question-4:
+Recursively go below a dir and based on filter, dump those files in to  single file 
+(work with only text file)
+######################DAY-3####################
+
+
+flatten(lst)        Flattens the list 
+                    ie input = [1,2,3, [1,2,3,[3,4],2]]
+                    output = [1,2,3,1,2,3,3,4,2]
+Question-13              
+convert(x)          Converts like below 
+                    input = [[[ '(0,1,2)' , '(3,4,5)'], ['(5,6,7)' , '(9,4,2)']]]
+                    output = [[[[0,1,2],[3,4,5]],[[5,6,7],[9,4,2]]]]
+
+
+
+######################DAY-4####################
+oop
+
+Question-5:
+
+from pkg.poly import Poly 
+a = Poly(1,2,3)  #an, ...., a0 
+b = Poly(1,0,1,1,2,3)
+c = a+b 
+print(c) #Poly ( 1,0,1, 2,4,6)
+
+Question-6:
+#MaxFile class 
+from pkg.file import File 
+fs = File(".")
+fs.getMaxSizeFile(2) # gives two max file names 
+fs.getLatestFiles(datetime.date(2018,2,1))
+#Returns list of files after 1st Feb 2018 
+
+
+
+
+######################DAY-5####################
+concurrent
+
+Question-8:
+Given a URL, download that and parse 
+and download all links inside that page 
+    in thread 
+    in process 
+    in asynchornous 
+    ThreadPoolExecutor or ProcessPoolExecutor or asyncio
+    BeautifulSoup for parsing html, requests for downloading
+    
+######################DAY-6####################
+Question-17:
+
+quicksort(lst)      Implement quicksort 
+                    1. Take pivot as middle value 
+                    2. Take left list which is smaller tha pivot 
+                    3. Take right list which is higher than pivot 
+                    4. return list which is append of quicksort of left, pivot and quicksort of right 
+
+                    
+Question-19
+binsearch(value, items, low=0, high=None) 
+                    Items are sorted 
+                    1. Get high either given or len of list 
+                       Get middle pos 
+                    2. if items's pos is value, return pos 
+                    3. if pos is length of items or high is same as low or pos is low, return not found 
+                    4. if items's pos is less than value call binsearch with low=pos+1 and high 
+                    5. else call binsearch with low and high=pos
+######################DAY-7####################
+Question-9:
+Given a filename and no of breaks, generate that many files with chunks from original file names 
+
+Question-10:
+Concatenate many .txt file into one file 
+
+######################DAY-8####################
+Question-11:
+Weather mock API 
+format comes from below endpoint 
+    Parse format, if xml, show xml, 
+    if none, show json 
+    Put all random temp 
+    City name may change based on PATH param 
+    (currently not implemented in demo api endpoint)
+
+DO the same as 
+http://notepadfromdas.pythonanywhere.com/w/mumbai?format=xml
+http://notepadfromdas.pythonanywhere.com/w/mumbai
+
+######################DAY-9####################
+fastapi
+Question-18:
+convert REST flask to fastapi
+
+
+######################DAY-Weekend####################
+flask
+Question-16:
+Sharing of content 
+@app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
+@app.route("/share", methods=['GET'])#http://localhost:5000/share
+@app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
+
+
+######################DAY-10####################
+pandas
+
+Question-20
+# A. Daily attendance of bike tracks
+every row contains the number of bicycles on every track of the city(montreal), 
+for every day of the year.
+Can you infer anything from the attendence record?
+
+url = "https://raw.githubusercontent.com/ndas1971/Misc/master/bikes.csv"
+
+1. Read 
+2. Check head 
+3. Check summary statistics 
+4. plot the daily attendance of two tracks, 'Berri1', 'PierDup'
+5. Check index , explore weekday_name attributes 
+6. Get sum of all attendance as a function of the weekday
+7. Display this in figure , what is the inference?
+
+
+# B. Titanic-https://www.kaggle.com/c/titanic/data
+Database of whether somebody survived or not
+Can you infer who has survived ?
+
+1. Load the data
+2. Which gender survived more 
+3. Does it depend on pclass?
+4. can we see % of survival of each gender and pclass 
+What is your inference? 
+
+# C. Roger Federer database 
+
+Each row corresponds to a ATP match played by Roger Federer
+
+Can you infer anything on Roger Federer performance?
+
+player = 'Roger Federer'
+url = "https://raw.githubusercontent.com/ndas1971/Misc/master/federer.csv"
+
+1. Read and check data 
+2. How many % of matched won by our player? ('winner')
+3. Proportion of double faults wrt total points in each match 
+This number is an indicator of the player's state of mind, his level of self-confidence, 
+his willingness to take risks while serving, and other parameters.
+columns:
+'player1 double faults' and 'player1 total points total'
+Display simple stats of above 
+4. Average Win per surface 
+5. Display the proportion of double faults as a function of the tournament date, 'start date'
+Trend: display average double faults in each year 
+
+
+D. 
+Create two frequencies 5Hz and 50Hz sin signals 
+Draw FFT components 
+
+E. Plotting normal random numbers
+and show that addition of two Gaussian is Gaussian 
+and addition of all is Gaussian
+
+######################DAY-11####################
+regression
+Question-23
+Use 
+sklearn.datasets.load_breast_cancer
+And Yellowbrick
+Show confusion matrix and ROCAUC 
+using Logistic regression 
+
+
+#https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)
+#check wdbc.data or check  breast_cancer.csv , but use load_breast_cancer() 
+#Diagnosis (M = malignant,1, B = benign,0) 
+1) ID number
+2) Diagnosis (M = malignant, B = benign)
+3-32)Ten real-valued features are computed for each cell nucleus:
+a) radius (mean of distances from center to points on the perimeter)
+b) texture (standard deviation of gray-scale values)
+c) perimeter
+d) area
+e) smoothness (local variation in radius lengths)
+f) compactness (perimeter^2 / area - 1.0)
+g) concavity (severity of concave portions of the contour)
+h) concave points (number of concave portions of the contour)
+i) symmetry
+j) fractal dimension ("coastline approximation" - 1)
+
+B. Use data/breast_cancer.csv
+Use LabelEncoder and MinMaxScalar and Use pipeline 
+Then GridSearch on param_grid = dict(lr__C=[0.1, 1, 10])
+using Logistic regression 
+
+
+######################DAY-12####################
+tpot/keras
+
+Question-26
+# HandsOn - Predict The Data Scientists Salary In India from kaggle use sklearn
+dataset: Predict-The-Data-Scientists-Salary-In-India_Train_Dataset.csv
+Data Features:
+    Name of the company (Encoded)
+    Years of experience(split to min and max experience)
+    Job description
+    Job designation
+    Job Type
+    Key skills
+    Location (needs LabelEncoded)
+    Salary in Rupees Lakhs(To be predicted)(needs LabelEncoded)
+    
+Find the best estimator among below 
+clf1 = DecisionTreeClassifier()
+clf2 = RandomForestClassifier(n_estimators=100)
+clf3 = ExtraTreesClassifier(n_estimators=100)
+clf4 =  AdaBoostClassifier(n_estimators=100)
+clf5 =  GradientBoostingClassifier(n_estimators=100)
+
+Question-27
+# HandsOn - Titanic survival prediction , from Kaggle
+https://www.kaggle.com/c/titanic/data
+           
+Understand data, download only train.csv and test.csv 
+
+Using Tpot, find the test score of best Estimator 
+Hint:
+The first and most important step in using TPOT on any data set 
+is to rename the target class/response variable to 'class'.
+
+At present, TPOT requires all the data to be in numerical format. 
+Categorical:  Name, Sex, Ticket, Cabin and Embarked.
+So convert categorical to number(which preprocessing?) and/or 
+discard high levels of categorical completely 
+
+Keras:
+data/pima-indians-diabetes.csv, Binary classification 
+
+######################DAY-13####################
+langchain
+Question-30
+Create chatbot using flask and langchain
+    Display has two inputs 
+    Query - takes Query
+    Result - returns result 
+MUst Have history
+
+

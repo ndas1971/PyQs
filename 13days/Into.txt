@@ -1,0 +1,754 @@
+---------------Ground Rules -----------------
+Trainer
+    Less theory, more handson 
+        from 3pm everyday
+            few exercises independently 
+            Core python every day handson 
+            Upload the final working code  in github 
+    10Q10min assessment everyday 
+    
+Participants 
+    Punctuality 
+    Replicate trainers code in own machine    
+    Solve independently all exercises and upload in github 
+    Give feedback if pace is high or low or more examples needed
+    
+   
+----- TOC ------
+DAY-1
+    Control structure
+    Data types 
+    Nested Data Structure
+DAY-2
+    Working with files
+    Functions
+    Using Modules
+    Using the Standard Library
+    Understanding regex and subprocess
+    User data handling     
+DAY-3
+    Advanced data structure
+    Understanding Lambda functions
+    HOF and Sorting 
+    HTTP automation
+    json/xml/html handling 
+DAY4:     
+    OOP
+    Exception Handling
+    Unit testing    
+    Python package manager
+DAY5
+    Concurrent Programming
+    Advanced Python 
+        decorator
+        Iterator
+    DB Programming         
+Day6    
+    Python Type system    
+    Pattern matching 
+    Asynchronous programming     
+DAY7:
+    Understanding Webserver
+    Flask
+    Jinja2 template
+    Form Handling
+    Flask configuration
+DAY8:
+    Working with databases (SQLAlchemy, SQLite/PostgreSQL)
+    Building a REST API with Flask
+    Authentication & middleware
+    Packaging and deployment 
+DAY9:
+    Introduction to FastAPI & differences from Flask    
+    Develop a RESTful API using FastAPI
+    Implement user authentication and CRUD operations
+    Dependency injection & middleware
+DAY10:
+    Introduction to Data analysis methods
+    Numpy, pandas, matplotlib    
+    Introduction to Data   
+--- GAP of one week ----
+(Other training and completion of assignments)
+DAY11:
+    Machine Learning introduction
+    ML general steps    
+    Regression, Metrics , CV, Pipeline
+    Classifications and Metrics
+    Feature Selection, Transformation and Extraction 
+DAy12:
+    Introduction to SVM 
+    Introduction to Ensemble methods
+    Introduction to NN and DNN using keras 
+    TF and/or Torch as backend
+Day13:
+    Introduction to GenAI
+    LLM concepts
+       RAG
+       grounding
+       few shots
+       prompt
+    LangChain introduction & LLM integration
+    Building AI-powered applications with OpenAI API
+    
+    
+
+        
+    
+        
+
+###Git commands 
+Create a repo in github web interface 
+
+#init a local repo 
+cd  dir 
+git init 
+git config --global user.email "mail_id"
+git config --global user.name  "mail_id_before@"
+
+git add one file name 
+git commit -m "Added trunc"
+#only for once
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO
+#every time, master is branch name 
+git push -u origin master
+Give username 
+When Git prompts you for your password, enter your personal access token.
+(profile image of your GitHub account -> Settings -> Developer Settings
+-> Personal access tokens)
+
+#For Fetching  
+git fetch origin master # whatever origin referes to , and master is branch 
+
+
+
+#for removing and then creating a branch 
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+git push origin master   
+
+#add directory 
+mkdir dir_name 
+#to add recursively 
+git add -f -all 
+git commit -am "<commit message>"
+git push -u origin master
+
+
+#clone a repo 
+cd  dir 
+git clone <repo url>
+
+#Advanced 
+Check current status /branch 
+    $ git status 
+    $ git branch 
+creates a new branch and switches to it
+    git checkout -b dev 
+Check status and diff 
+    git status 
+    git diff 
+Do changes 
+    git add README.md 
+    git commit -m "Added my nmae to REAME"
+all the commits on my current local branch.
+    git log 
+Push the new branch 
+    do git push --set-upstream origin dev
+Merging to main branch 
+    What rebase does is take all the commits that were made to the TO_BRANCH branch 
+    and it puts them right before all commits at FROM_BRANCH and make FROM_BRANCH
+    uptodate with TO_BRANCH, hence easy to merge FROM_BRANCH to TO_BRANCH
+    (generally, TO_BRANCH is main branch, FROM_BRANCH is working branch)
+    change to the branch to where we do merging 
+        git checkout TO_BRANCH 
+        git pull
+    change to the branch from where we do merging 
+        git checkout FROM_BRANCH  #FROM branch 
+        git rebase TO_BRANCH   #TO branch 
+            above flags conflicts 
+            ... 3-way merge 
+            error: failed to merge 
+            open the file and update 
+            Git merge conflicts are denoted with their <<<<<<< HEAD, 
+            which denotes the beginning of a conflict 
+            in a file. Then that part to ======= represents the new changes that are causing 
+            the conflict. 
+            Then that part to the end of >>>>>>> [commit message] is the most current commit 
+            ,which is basically what you had in your code before your changes
+            that caused a conflict.Change manually 
+            Then again restart 
+            git rebase --continue 
+    actual merging 
+        $ git checkout TO_BRANCH 
+        $ git pull 
+        $ git merge FROM_BRANCH
+        $ git push      
+
+Sometimes you might be working on something at OWN_BRANCH, 
+there are some new changes someone else pushed to FROM_BRANCH that you want. 
+YOU are at  OWN_BRANCH 
+$ git stash
+$ git checkout FROM_BRANCH
+$ git pull
+$ git checkout OWN_BRANCH
+$ git rebase FROM_BRANCH
+$ git stash pop
+$ git stash list 
+
+
+###Docker 
+docker pull ubuntu
+docker run --name ubuntu_bash --rm -i -t ubuntu bash
+docker exec -d ubuntu_bash touch /tmp/execWorks
+docker logs -f ubuntu_bash
+docker container ps -all 
+docker kill ubuntu_bash
+docker rm -f ubuntu_bash
+docker rmi ubuntu
+docker cp ./some_file CONTAINER:/work
+docker cp CONTAINER:/var/logs/ /tmp/app_logs
+
+
+> docker --version
+#Pull the hello-world image from Docker Hub and run a container:
+> docker run hello-world
+#List the hello-world image that was downloaded from Docker Hub:
+> docker image ls
+#List the hello-world container 
+> docker container ls --all
+#Explore the Docker help pages by running some help commands:
+> docker --help
+> docker container --help
+> docker container ls --help
+> docker run --help
+
+#inside the spawned container:
+
+> docker run --interactive --tty ubuntu bash  #pulls ubuntu:latest
+#or 
+> docker run -it  ubuntu bash
+root@8aea0acb7423:$ hostname
+8aea0acb7423
+#Notice that the hostname is assigned as the container ID 
+#(and is also used in the prompt).
+#Exit the shell with the exit command (which also stops the container):
+root@8aea0acb7423:/$ exit
+
+#eg The password is 'ubuntu' for the 'ubuntu' user (at least in docker for ubuntu :14.04.03).
+#NB: 'ubuntu' is created after the startup of the container so, below would directly take to root 
+$ docker run -i -t --entrypoint /bin/bash  ubuntu  
+
+> docker container ls --all
+CONTAINER ID    IMAGE          COMMAND     CREATED          STATUS                      PORTS    NAMES
+8aea0acb7423    ubuntu         "bash"      2 minutes ago    Exited (0) 2 minutes ago             laughing_kowalevski
+45f77eb48e78    hello-world    "/hello"    3 minutes ago    Exited (0) 3 minutes ago             relaxed_sammet
+
+
+#Pull and run a Dockerized nginx web server that we name, webserver:
+#expose port 80 on the container(nginx) to port 8080(public) on the host
+#--rm is must as it would delete old container or change the name 
+#(upping takes min 3 min)
+> docker run --rm --detach --publish 8080:80 --name webserver nginx #host:guest
+#or 
+> docker run --rm -d -p 8080:80 --name webserver nginx
+
+Point your web browser at http://192.168.99.101:8080 to display the nginx start page. 
+(localhost does not work)
+192.168.99.101 is the docker VM displayed during cmd start up 
+or docker-machine ip or $DOCKER_HOST for docker tools 
+For deocker desktop, localhost works 
+
+#Stop the running nginx container by the name we assigned it, webserver:
+>  docker container stop webserver 
+
+#Remove all three containers by their names -- the latter two names will differ for you:
+#below is must to rerun with same name 
+> docker container rm webserver laughing_kowalevski relaxed_sammet docker-nginx
+
+##Quick App services 
+Reference 
+https://github.com/docker/awesome-compose
+Step 1: Define the application dependencies
+
+mkdir composetest
+cd composetest
+
+#app.py
+import time
+
+import redis
+from flask import Flask
+
+app = Flask(__name__)
+cache = redis.Redis(host='redis', port=6379)
+
+def get_hit_count():
+    retries = 5
+    while True:
+        try:
+            return cache.incr('hits')
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+@app.route('/')
+def hello():
+    count = get_hit_count()
+    return 'Hello World! I have been seen {} times.\n'.format(count)
+
+#requirements.txt
+flask
+redis
+
+Step 2: Create a Dockerfile
+
+#Dockerfile 
+# syntax=docker/dockerfile:1
+FROM python:3.10-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD ["flask", "run"]
+
+Step 3: Define services in a Compose file
+
+#compose.yaml
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
+
+host port 8000 to container port 5000
+
+Step 4: Build and run your app with Compose
+
+$ docker compose up
+
+Creating network "composetest_default" with the default driver
+Creating composetest_web_1 ...
+Creating composetest_redis_1 ...
+Creating composetest_web_1
+Creating composetest_redis_1 ... done
+Attaching to composetest_web_1, composetest_redis_1
+web_1    |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+Enter http://localhost:8000/ in a browser to see the application running.
+
+Hello World! I have been seen 1 times.
+
+Refresh the page.The number should increment.
+
+$ docker image ls
+
+    REPOSITORY        TAG           IMAGE ID      CREATED        SIZE
+    composetest_web   latest        e2c21aa48cc1  4 minutes ago  93.8MB
+    python            3.4-alpine    84e6077c7ab6  7 days ago     82.5MB
+    redis             alpine        9d8fa9aa0e5b  3 weeks ago    27.5MB
+
+Step 5: Edit the Compose file to add a bind mount
+
+#compose.yaml 
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/code
+    environment:
+      FLASK_DEBUG: "true"
+  redis:
+    image: "redis:alpine"
+    
+host dir .  to container dir /code 
+
+Step 6: Re-build and run the app with Compose
+$ docker compose up
+
+Creating network "composetest_default" with the default driver
+Creating composetest_web_1 ...
+Creating composetest_redis_1 ...
+Creating composetest_web_1
+Creating composetest_redis_1 ... done
+Attaching to composetest_web_1, composetest_redis_1
+web_1    |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+...
+
+Step 7: Update the application
+
+#app.py and save it. 
+#For example, change the Hello World! message to Hello from Docker!:
+
+return 'Hello from Docker! I have been seen {} times.\n'.format(count)
+
+Refresh the app in your browser. 
+The greeting should be updated, and the counter should still be incrementing.
+
+Step 8: Experiment with some other commands
+$ docker compose up -d    #detached 
+
+Starting composetest_redis_1...
+Starting composetest_web_1...
+
+$ docker compose ps
+
+       Name                      Command               State           Ports         
+-------------------------------------------------------------------------------------
+composetest_redis_1   docker-entrypoint.sh redis ...   Up      6379/tcp              
+composetest_web_1     flask run                        Up      0.0.0.0:8000->5000/tcp
+
+$ docker compose run web env
+
+$ docker compose stop
+
+Pass --volumes to also remove the data volume used by the Redis container:
+
+$ docker compose down --volumes
+
+##With Docker and Path & Query parameters 
+Start Docker app, which is based wsl - DOcker Desktop
+
+For example, your requirements.txt could look like:
+
+fastapi[standard]>=0.113.0,<0.114.0
+pydantic>=2.7.0,<3.0.0
+
+$ pip install -r requirements.txt
+
+.
++-- app
+¦   +-- __init__.py
+¦   +-- main.py
++-- Dockerfile
++-- requirements.txt
+
+
+#app\__init__.py 
+
+#app\main.py 
+from typing import Union
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+#Note no Return Type, but argument has type 
+#means return type is Any , which is std practice 
+@app.get("/items/{item_id}")  #Path 
+def read_item(item_id: int, q: Union[str, None] = None): #item_id is Path and rest are Query 
+    return {"item_id": item_id, "q": q}
+    
+#Dockerfile
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+
+#Behind a TLS Termination Proxy
+CMD ["fastapi", "run", "app/main.py", "--proxy-headers", "--port", "80"]
+
+
+#Build 
+docker build -t myimage .
+docker run -d --name mycontainer -p 80:80 myimage
+
+http://192.168.99.100/items/5?q=somequery 
+or http://127.0.0.1/items/5?q=somequery 
+
+You will see something like:
+{"item_id": 5, "q": "somequery"}
+
+http://192.168.99.100/docs or http://127.0.0.1/docs
+
+##Docker help 
+for Windows10 Pro , install from 
+https://store.docker.com/editions/community/docker-ce-desktop-windows
+
+docker command line 
+https://docs.docker.com/engine/reference/commandline/run/
+
+dockerFile reference 
+https://docs.docker.com/engine/reference/builder/
+
+docker Hub 
+https://hub.docker.com/
+
+Basic commands 
+https://docs.docker.com/reference/cli/docker/
+
+Docker cheatsheet 
+https://docs.docker.com/get-started/docker_cheatsheet.pdf
+
+
+###Poetry packagemanager 
+
+https://python-poetry.org/docs/
+
+Poetry replaces setup.py, requirements.txt, setup.cfg, MANIFEST.in and Pipfile 
+with a simple pyproject.toml based project format.
+(check https://python-poetry.org/docs/pyproject/)
+
+poetry creates  creates Virtual Env , So no need for below 
+$ python -m venv <venv>  # for example c:\path\to\myenv
+$ source <venv>/bin/activate
+
+C:\> <venv>\Scripts\activate.bat
+PS C:\> <venv>\Scripts\Activate.ps1
+
+#commands 
+poetry new flaskr
+cd flaskr
+
+#if local pypi server is needed, add index-url else skip 
+https://<<SERVER>>/artifactory/api/pypi/<<LOCATION>>/simple/
+pip config list  
+#pip config get global.index-url 
+#pip config --global get index-url
+poetry source add --priority=default internalpypi index-url 
+poetry source add --priority=supplemental PyPI
+
+#Then do 
+poetry config virtualenvs.in-project true 
+poetry cache clear pypi --all
+
+poetry add flask gevent
+#poetry add django@^4.0.0
+poetry install
+poetry env info
+#build 
+poetry build -v
+
+#WIth virtual env 
+$ poetry shell 
+> python flaskr\somefile.py
+
+#FURTHER TEST 
+python -m vnev .\env 
+.\env\Scripts\activate
+pip install dist/flaskr-1.0.0-py3-none-any.whl
+cd ..
+set FLASK_APP=flaskr 
+flask run 
+
+In Latest versions 
+instead of poetry shell use 
+poetry env activate 
+this displays the env file to execute, so execute it 
+
+src layouts - how to run pytest 
+Update 
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src", "src2",
+]
+
+or
+
+[pytest]
+pythonpath = src src2
+
+
+
+
+###Install 
+pip install   scikit-learn scipy pillow  pylint pytest scikit-image seaborn sympy tornado xlwt xlrd yellowbrick
+pip install lightgbm
+pip install  xgboost tpot
+pip install pytest-cov tables stanfordcorenlp sumy
+pip install sparkit-learn sklearn-pandas gensim pmdarima
+pip install prophet pandas-datareader
+pip install streamlit 
+pip install pycausalimpact
+pip install pandas flask sqlalchemy 
+pip install  poetry pytest pytest-cov requests  beautifulsoup4 flask sqlalchemy numpy  pandas  openpyxl xlrd matplotlib wheel gevent
+
+pip install --upgrade pip
+pip install tensorflow
+pip3 install torch torchvision torchaudio
+pip install --upgrade keras-cv
+pip install --upgrade keras-hub
+pip install --upgrade keras
+pip install keras_tuner 
+pip install jupyterlab 
+pip install autokeras
+
+You can export the environment variable KERAS_BACKEND or you can edit your local config file at ~/.keras/keras.json to configure your backend. Available backend options are: "jax", "tensorflow", "torch". Example:
+
+export KERAS_BACKEND="jax"
+
+In Colab, you can do:
+
+import os
+os.environ["KERAS_BACKEND"] = "jax"
+import keras
+
+pip install fastapi httpx "uvicorn[standard]"
+pip install "fastapi[standard]"
+pip install email-validator
+pip install "pydantic[email]"
+pip install python-multipart
+pip install sqlmodel
+pip install httpx
+pip install pyjwt[crypto]
+pip install "passlib[bcrypt]"
+pip install --upgrade orjson
+pip install jinja2
+pip install websockets
+pip install pydantic-settings
+pip install python-dotenv
+
+###Flask and Poetry packaging 
+STEP1: CREATE below 
+poetry new flaskr
+cd flaskr
+
+
+
+#ONLy for Office PC 
+Given index-url = https://<<SERVER>>/artifactory/api/pypi/<<LOCATION>>/simple/
+pip config list 
+
+poetry source add --priority=default ourpypi index-url
+poetry source add --priority=supplemental PyPI
+
+#where venv to be created 
+poetry config virtualenvs.in-project true 
+
+#STEP1.1
+poetry add flask gevent
+
+Copy static, templates and quick_server.py inside flaskr\flaskr
+
+STEP2: UPDATE
+#flaskr\flaskr\__init__.py
+from flask import Flask
+app = Flask(__name__)
+from . import quick_server
+#Update flaskr\flaskr\quick_server.py
+#app = Flask(__name__)  #comment this line 
+from flaskr import app
+
+STEP3: TEST 
+poetry env info
+poetry shell
+set FLASK_APP=flaskr 
+flask run   # run whatever set in FLASK_APP
+
+STEP4:
+exit
+poetry build -v
+#You can find the file in dist/flaskr-0.1.0-py3-none-any.whl
+
+FURTHER TEST 
+cd ..
+python -m venv .\env 
+.\env\Scripts\activate
+pip install flaskr/dist/flaskr-0.1.0-py3-none-any.whl
+set FLASK_APP=flaskr 
+flask run 
+
+
+Install 
+$ pip install --force-reinstall --no-dependencies dist/flaskr-0.1.0-py3-none-any.whl
+
+STEP4:
+##Deployment
+#https://flask.palletsprojects.com/en/1.1.x/deploying/wsgi-standalone/
+
+# For example to deploy via  Gevent 
+pip install gevent 
+#Gevent is a coroutine-based Python networking library 
+#that uses greenlet to provide a high-level synchronous API on top of libev event loop:
+
+#Execute by 'python gevent_server.py'
+#gevent_server.py
+from gevent.pywsgi import WSGIServer
+from flaskr import app
+
+# http_server = WSGIServer(('localhost', 443), app, keyfile='key.pem', certfile='cert.pem')
+http_server = WSGIServer(('localhost', 8080), app)
+http_server.serve_forever()
+
+##To generate self signed certificate 
+Note cert.pem may have public ip or localhost 
+But whatever it has , must be the same as given in above 'http_server'
+
+import requests
+r = requests.get("https://localhost/helloj?name=das&format=json", verify=False)
+r = requests.get("https://localhost/helloj?name=das&format=json", verify="./cert.pem")
+
+#Create - instead of localhost, gives public IP 
+#-nodes (short for no DES) for no  passphrase(else min 4 character passphrase) 
+(check by 'where openssl.exe' ) 
+$ openssl req -x509 -subj '/CN=localhost' -nodes -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
+
+
+Note for subjectAltName error
+Check 
+https://gist.github.com/KeithYeh/bb07cadd23645a6a62509b1ec8986bbc
+https://serverfault.com/questions/845766/generating-a-self-signed-cert-with-openssl-that-works-in-chrome-58
+
+###Azure App service 
+For azure , check 
+https://techcommunity.microsoft.com/blog/appsonazureblog/deploy-streamlit-on-azure-web-app/4276108
+To deploy a fastapi application on Azure App Service, follow these steps:
+    Create an Azure App Service with B1 SKU or higher, as the free version does not support fastapi.
+    Choose Python v3.12 or above for fastapi in the App Service.
+    Choose Linux as the operating system for the App Service.
+    Make sure your code folder has a requirements.txt file with all the dependencies.
+    Create a bash script run.sh, and write the following command in it:
+    Bash 
+        python -m fastapi run ui/app.py --server.port 8000 --server.address 0.0.0.0
+
+    Replace ui/app.py with your application name.
+    Use port 8000 because Azure App Service by default exposes only 8000 and 443 ports.
+
+    Open Visual Studio Code and install the Azure Extension Pack.
+    Log in to Visual Studio Code with your Azure account.
+    Use the Azure App Service: 
+        Deploy to Web App command in Visual Studio Code and select your App Service name.
+    Wait for deployment to be finished.
+    Go to the Azure portal and update the Startup Command configuration for the App Service 
+    and set the value to run.sh. You can find this configuration inside App Service > Settings > Configurations > General settings.
+    Wait for some seconds and visit the application URL. 
+    You have successfully deployed your fastapi application to the Azure App Service.
+
+OR 
+    az login
+    az group create --name ResourceGroupName --location Region
+    az appservice plan create --name PlanName --resource-group ResourceGroupName --sku B1 --is-linux
+    az webapp create --name AppName --resource-group ResourceGroupName --plan PlanName --runtime "python|3.12"
+    Deploy your fastapi app to Azure using Git. 
+    git init
+    git remote add azure <git-url-from-azure>
+
+    Now finally push your code to azure.
+    Bash
+    git add .
+    git commit -m "Initial commit"
+    git push azure master
+
+    
+
+
+
+
