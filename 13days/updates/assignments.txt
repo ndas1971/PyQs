@@ -64,39 +64,19 @@ concurrent
 Question-8:
 Given a URL, download that and parse 
 and download all links inside that page 
-    TODAY - in thread 
-    in process 
-    in asynchornous 
-    ThreadPoolExecutor or ProcessPoolExecutor or asyncio
+    Use ThreadPoolExecutor or ProcessPoolExecutor 
     BeautifulSoup for parsing html, requests for downloading
     
 ######################DAY-6####################
-Question-17:
+Question-8:
+Given a URL, download that and parse 
+and download all links inside that page 
+    in asyncio 
+    BeautifulSoup for parsing html, requests for downloading
+    
 
-quicksort(lst)      Implement quicksort 
-                    1. Take pivot as middle value 
-                    2. Take left list which is smaller tha pivot 
-                    3. Take right list which is higher than pivot 
-                    4. return list which is append of quicksort of left, pivot and quicksort of right 
 
-                    
-Question-19
-binsearch(value, items, low=0, high=None) 
-                    Items are sorted 
-                    1. Get high either given or len of list 
-                       Get middle pos 
-                    2. if items's pos is value, return pos 
-                    3. if pos is length of items or high is same as low or pos is low, return not found 
-                    4. if items's pos is less than value call binsearch with low=pos+1 and high 
-                    5. else call binsearch with low and high=pos
 ######################DAY-7####################
-Question-9:
-Given a filename and no of breaks, generate that many files with chunks from original file names 
-
-Question-10:
-Concatenate many .txt file into one file 
-
-######################DAY-8####################
 Question-11:
 Weather mock API 
 format comes from below endpoint 
@@ -110,19 +90,21 @@ DO the same as
 http://notepadfromdas.pythonanywhere.com/w/mumbai?format=xml
 http://notepadfromdas.pythonanywhere.com/w/mumbai
 
-######################DAY-9####################
-fastapi
-Question-18:
-convert REST flask to fastapi
 
-
-######################DAY-Weekend####################
+######################DAY 8& DAY-Weekend####################
 flask
 Question-16:
 Sharing of content 
 @app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
 @app.route("/share", methods=['GET'])#http://localhost:5000/share
 @app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
+
+
+
+######################DAY-9####################
+fastapi
+Question-18:
+convert REST flask to fastapi
 
 
 ######################DAY-10####################
@@ -269,4 +251,28 @@ Create chatbot using flask and langchain
     Result - returns result 
 MUst Have history
 
+###############EXTRA 
+Question-17:
 
+quicksort(lst)      Implement quicksort 
+                    1. Take pivot as middle value 
+                    2. Take left list which is smaller tha pivot 
+                    3. Take right list which is higher than pivot 
+                    4. return list which is append of quicksort of left, pivot and quicksort of right 
+
+                    
+Question-19
+binsearch(value, items, low=0, high=None) 
+                    Items are sorted 
+                    1. Get high either given or len of list 
+                       Get middle pos 
+                    2. if items's pos is value, return pos 
+                    3. if pos is length of items or high is same as low or pos is low, return not found 
+                    4. if items's pos is less than value call binsearch with low=pos+1 and high 
+                    5. else call binsearch with low and high=pos
+#
+Question-9:
+Given a filename and no of breaks, generate that many files with chunks from original file names 
+
+Question-10:
+Concatenate many .txt file into one file 
