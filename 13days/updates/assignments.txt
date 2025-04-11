@@ -68,7 +68,7 @@ and download all links inside that page
     BeautifulSoup for parsing html, requests for downloading
     
 ######################DAY-6####################
-Question-8:
+Question-9:
 Given a URL, download that and parse 
 and download all links inside that page 
     in asyncio 
@@ -76,7 +76,17 @@ and download all links inside that page
     
 
 
-######################DAY-7####################
+
+
+######################DAY 7& DAY-Weekend####################
+flask
+Question-16:
+Sharing of content 
+@app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
+@app.route("/share", methods=['GET'])#http://localhost:5000/share
+@app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
+
+######################DAY-8####################
 Question-11:
 Weather mock API 
 format comes from below endpoint 
@@ -91,20 +101,10 @@ http://notepadfromdas.pythonanywhere.com/w/mumbai?format=xml
 http://notepadfromdas.pythonanywhere.com/w/mumbai
 
 
-######################DAY 8& DAY-Weekend####################
-flask
-Question-16:
-Sharing of content 
-@app.route("/updatefortoday", methods=['GET','POST'])#http://localhost:5000/updatefortoday
-@app.route("/share", methods=['GET'])#http://localhost:5000/share
-@app.route("/clearnotepadtxt", methods=['GET'])#http://localhost:5000/clearnotepadtxt
-
-
-
 ######################DAY-9####################
 fastapi
 Question-18:
-convert REST flask to fastapi
+convert helloj of flask to fastapi
 
 
 ######################DAY-10####################
